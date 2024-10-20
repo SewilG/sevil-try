@@ -1,0 +1,16 @@
+name: "Simple Composite Action"
+description: "A simple composite GitHub Action example"
+inputs:
+  example-input:
+    description: "An example input"
+    required: true
+    default: "default value"
+runs:
+  using: "composite"
+  steps:
+    - name: "Check out repository"
+      uses: actions/checkout@v2
+
+    - name: "Run a simple command"
+      shell: bash
+      run: echo "Hello, ${{ inputs.example-input }}"
